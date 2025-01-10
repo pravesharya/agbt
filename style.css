@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  user-select: none;
+  cursor: none;
+}
+#main {
+  /* position: absolute; */
+  /* top: 100vh; */
+  /* left: 0; */
+  width: 100vw;
+  background-color: blueviolet;
+  opacity: 0.75;
+}
+
+/* Section-------------------------------------------- */
+.section {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.75s ease;
+}
+.section-title {
+  height: 82px;
+  font-family: "Orbitron", serif;
+  font-size: 4rem;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 900;
+}
+.section-content {
+  width: 80%;
+  height: 80%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.section-body {
+  font-size: 1.4rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Services-------------------------------------------- */
+.service {
+  display: none;
+}
+.service-content {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+}
+.service-img {
+  width: 40%;
+}
+.service-img > img {
+  width: 100%;
+}
+.service-text {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  overflow-y: auto;
+}
+#service1 {
+  display:block;
+}
+
+/* Header and Footer-------------------------------------------- */
+.HF {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.75);
+  font-family: "Orbitron", serif;
+  font-weight: bold;
+  color: white;
+  padding: 0 1rem;
+  transition: all 0.5s ease;
+  position: absolute;
+}
+#header {
+  width: 100%;
+  top: -100px;
+}
+#footer {
+  width: 100%;
+  top: 100vh;
+  font-size: 0.75rem;
+  font-weight: 100;
+}
+.btn{
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  padding: 4px;
+}
+.btn:hover{
+  background-color: rgb(203, 70, 255);
+}
+
+/* Others -------------------------------------------- */
+#intro-div {
+  background-color: white;
+  width: 80%;
+  padding: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-family: "Orbitron", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ========================================= Tablet Responsive */
+@media screen and (max-width: 1024px) {
+  #intro-div {
+    padding: 20px;
+    font-size: 2rem;
+  }
+  .section-content{
+    gap: 10px;
+  }
+  .section-title {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .section-body {
+    font-size: 2rem;
+  }
+
+  .service-content {
+    flex-direction: column;
+    align-items: center;
+    gap : 8px;
+  }
+  .service-img{
+    width: 80%;
+  }
+  .service-text {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+}
+
+/* ========================================= Mobile Responsive */
+@media screen and (max-width: 768px) {
+
+  #intro-div {
+    padding: 20px;
+    font-size: 1rem;
+  }
+  .section-content{
+    gap: 10px;
+  }
+  .section-title{
+    font-size: 1.5rem;
+    height: 32px;
+  }
+  .section-body {
+    font-size: 1.2rem;
+  }
+
+  .service > h2{
+    text-align: center;
+  }
+  .service-content {
+    gap : 4px;
+  }
+  .service-img{
+    width: 100%;
+  }
+  .service-text {
+    font-size: 0.8rem;
+  }
+  #footer {
+    font-size: 0.5rem;
+    font-weight: 80;
+  }
+}
