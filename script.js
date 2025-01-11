@@ -107,7 +107,7 @@ function nextSection() {
   currentSection++;
   // console.log(currentSection);
   header.style.top = "0px";
-  footer.style.top = "calc(100vh - 60px)";
+  footer.style.bottom = "0px";
 
   switch (currentSection) {
     case 1:
@@ -150,7 +150,7 @@ function previousSection() {
   switch (currentSection) {
     case 0:
       header.style.top = "-50px";
-      footer.style.top = "100vh";
+      footer.style.bottom = "-60px";
       camera.position.z = cameraZ;
       currentSection--;
       break;
