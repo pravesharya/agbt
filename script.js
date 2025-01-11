@@ -1,9 +1,12 @@
 import * as THREE from "three";
 import { generateStars } from "./starsss.js";
 
-const sat = new Image();
-sat.src = "./assets/sat.gif";
+let width = window.innerWidth;
+let height = window.innerHeight;
+
 function initSatelliteCursor(size = 32) {
+  const sat = new Image();
+  sat.src = "./assets/sat.gif";
   let cursor = document.createElement("div");
   cursor.style.position = "fixed";
   cursor.style.width = `${size}px`;
@@ -19,16 +22,20 @@ function initSatelliteCursor(size = 32) {
     cursor.style.top = e.clientY - size / 2 + "px";
   });
 }
-initSatelliteCursor(150);
 
-let width = window.innerWidth;
-let height = window.innerHeight;
+let isPortrait = false;
+let cameraZ = 2;
+console.log(width, height, isPortrait,width-200);
+if (width < 780) { // Portrait mode
+  isPortrait = true;
+  cameraZ = 3.5;
+} else { // Landscape Mode
+  initSatelliteCursor(150);
+}
 
 const canvas = document.querySelector("#canvas");
 canvas.width = width;
 canvas.height = height;
-let cameraZ = (width > 770) ? 2 : 3.5 ;
-
 let scene, camera, renderer, earthMain, stars;
 function setupBG() {
   scene = new THREE.Scene();
@@ -74,13 +81,31 @@ const collabs = document.querySelector("#collabs");
 const contact = document.querySelector("#contact");
 const header = document.querySelector("#header");
 const footer = document.querySelector("#footer");
+const menu_D = document.querySelector("#header-links");
+const menu_M = document.querySelector("#side-menu-btn");
+const menu_Tray = document.querySelector("#side-menu-tray");
+const menu_TrayClose = document.querySelector("#close-menu");
+
+if (isPortrait) {
+  menu_D.style.display = "none";
+  menu_M.style.display = "block";
+
+  menu_M.addEventListener("click", () => {
+    console.log("side menu OPEN clicked");
+    menu_Tray.style.right = "0px";
+  });
+  menu_TrayClose.addEventListener("click", () => {
+    console.log("side menu CLOSE clicked");
+    menu_Tray.style.right = "-200px";
+  });
+}
 
 let currentSection = 0;
 const totalSections = 9;
 function nextSection() {
-  console.log("nextSection");
+  // console.log("nextSection");
   currentSection++;
-  console.log(currentSection);
+  // console.log(currentSection);
   header.style.top = "0px";
   footer.style.top = "calc(100vh - 60px)";
 
@@ -118,10 +143,9 @@ function nextSection() {
       break;
   }
 }
-
 function previousSection() {
-  console.log("previousSection");
-  console.log(currentSection);
+  // console.log("previousSection");
+  // console.log(currentSection);
 
   switch (currentSection) {
     case 0:
@@ -199,7 +223,6 @@ addEventListener(
   },
   { passive: false }
 );
-
 addEventListener(
   "touchmove",
   (e) => {
@@ -210,8 +233,8 @@ addEventListener(
     const touchY = e.touches[0].clientY;
     const deltaY = touchStartY - touchY;
     const threshold = height / 10; // Minimum swipe distance to trigger section change
-    console.log(threshold);
-    console.log(Math.abs(deltaY));
+    // console.log(threshold);
+    // console.log(Math.abs(deltaY));
 
     if (Math.abs(deltaY) > threshold) {
       if (deltaY > 0) {
