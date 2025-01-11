@@ -4,7 +4,7 @@ html{
 
 :root {
   --colorP: blueviolet; /* Primary color */
-  --colorS: rgb(203, 70, 255); /* Secondary color */
+  --colorS: rgba(203, 70, 255,0.75); /* Secondary color */
 }
 
 * {
@@ -130,6 +130,13 @@ html{
 
 #side-menu-btn{
   display: none;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: none;
+  border-radius: 0.5rem;
+}
+#close-menu{
+  background: none;
+  border: none;
 }
 .side-btn {
   width: 100%;
@@ -189,6 +196,7 @@ html{
   /* justify-content: center; */
   gap: 20px;
 }
+
 
 /* ========================================= Tablet Responsive */
 @media screen and (max-width: 1024px) {

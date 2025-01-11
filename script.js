@@ -261,13 +261,13 @@ function animate() {
 }
 animate();
 
-// addEventListener("resize", () => {
-//   width = window.innerWidth;
-//   height = window.innerHeight;
-//   canvas.width = width;
-//   canvas.height = height;
-//   renderer.setSize(width, height);
-//   camera.aspect = width / height;
-//   camera.updateProjectionMatrix();
-//   renderer.render(scene, camera);
-// });
+addEventListener("resize", () => {
+  width = window.innerWidth;
+  height = window.innerHeight;
+  canvas.width = width;
+  canvas.height = height;
+  renderer.setSize(width, height);
+  camera.aspect = width / height;
+  camera.updateProjectionMatrix();
+  renderer.render(scene, camera);
+});
