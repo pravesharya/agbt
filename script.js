@@ -26,7 +26,7 @@ function initSatelliteCursor(size = 32) {
 let isPortrait = false;
 let cameraZ = 2;
 console.log(width, height, isPortrait,width-200);
-if (width < 780) { // Portrait mode
+if (width < height) { // Portrait mode
   isPortrait = true;
   cameraZ = 3.5;
 } else { // Landscape Mode
@@ -261,13 +261,13 @@ function animate() {
 }
 animate();
 
-addEventListener("resize", () => {
-  width = window.innerWidth;
-  height = window.innerHeight;
-  canvas.width = width;
-  canvas.height = height;
-  renderer.setSize(width, height);
-  camera.aspect = width / height;
-  camera.updateProjectionMatrix();
-  renderer.render(scene, camera);
-});
+// addEventListener("resize", () => {
+//   width = window.innerWidth;
+//   height = window.innerHeight;
+//   canvas.width = width;
+//   canvas.height = height;
+//   renderer.setSize(width, height);
+//   camera.aspect = width / height;
+//   camera.updateProjectionMatrix();
+//   renderer.render(scene, camera);
+// });

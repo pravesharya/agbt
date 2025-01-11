@@ -1,3 +1,12 @@
+html{
+  font-size: 8px;
+}
+
+:root {
+  --colorP: blueviolet; /* Primary color */
+  --colorS: rgb(203, 70, 255); /* Secondary color */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,14 +15,7 @@
   user-select: none;
   cursor: none;
 }
-#main {
-  /* position: absolute; */
-  /* top: 100vh; */
-  /* left: 0; */
-  width: 100vw;
-  background-color: blueviolet;
-  opacity: 0.75;
-}
+
 
 /* Section-------------------------------------------- */
 .section {
@@ -27,9 +29,9 @@
   transition: all 0.75s ease;
 }
 .section-title {
-  height: 82px;
+  height: 6rem;
   font-family: "Orbitron", serif;
-  font-size: 4rem;
+  font-size: 5rem;
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 900;
@@ -40,13 +42,13 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 1.5rem;
   background-color: white;  
   border-radius: 10px;
+  overflow-y: auto  ;
 }
-
 .section-body {
-  font-size: 1.4rem;
+  font-size: 3rem;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -54,11 +56,20 @@
 .service {
   display: none;
 }
+#service1 {
+  display:block;
+}
 .service-content {
   display: flex;
   gap: 20px;
   padding: 20px;
   width: 100%;
+}
+.service-title {
+  font-family: "Orbitron", serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--colorP);
 }
 .service-img {
   width: 40%;
@@ -73,12 +84,10 @@
   flex-direction: column;
   gap: 6px;
   font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
+  font-size: 2rem;
   overflow-y: auto;
 }
-#service1 {
-  display:block;
-}
+
 
 /* Header and Footer-------------------------------------------- */
 .HF {
@@ -88,6 +97,7 @@
   width: 100vw;
   height: 60px;
   background-color: rgba(0, 0, 0, 0.75);
+  font-size: 2rem;
   font-family: "Orbitron", serif;
   font-weight: bold;
   color: white;
@@ -102,7 +112,6 @@
 #footer {
   width: 100%;
   bottom: -60px;
-  font-size: 0.75rem;
   font-weight: 100;
 }
 .btn{
@@ -110,9 +119,12 @@
   background-color: black;
   border-radius: 10px;
   padding: 4px;
+  font-size: 2rem;
 }
 .btn-cnt{
-  background-color: rgba(255, 255, 255, 0.521);
+  padding: 4px;
+  border-radius: 10px;
+  background-color: none;
   border: none;
 }
 
@@ -122,8 +134,8 @@
 .side-btn {
   width: 100%;
 }
-.btn:hover, .side-btn:hover{
-  background-color: rgb(203, 70, 255);
+.btn:hover, .btn-cnt:hover, .side-btn:hover{
+  background-color: var(--colorS);
 }
 
 #side-menu-tray {
@@ -164,7 +176,7 @@
   border-radius: 10px;
 
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   font-family: "Orbitron", serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -180,32 +192,39 @@
 
 /* ========================================= Tablet Responsive */
 @media screen and (max-width: 1024px) {
+  .HF {
+    font-size: 2rem;
+    font-weight: 80;
+  }
   #intro-div {
     padding: 20px;
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   .section-content{
-    gap: 10px;
+    gap: 2rem;
   }
   .section-title {
-    font-size: 3rem;
+    font-size: 4rem;
     text-align: center;
   }
   .section-body {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .service-content {
     flex-direction: column;
     align-items: center;
-    gap : 8px;
+    gap : 2rem;
+  }
+  .service-title {
+    font-size: 2.5rem;
   }
   .service-img{
     width: 80%;
   }
   .service-text {
     width: 100%;
-    font-size: 0.8rem;
+    font-size: 2rem;
   }
 }
 
@@ -213,34 +232,34 @@
 @media screen and (max-width: 768px) {
 
   #intro-div {
-    padding: 20px;
-    font-size: 1rem;
+    padding: 2rem;
+    font-size: 2.25rem;
   }
   .section-content{
     gap: 10px;
   }
   .section-title{
-    font-size: 1.5rem;
+    font-size: 3rem;
     height: 32px;
-  }
-  .section-body {
-    font-size: 1.2rem;
-  }
-
-  .service > h2{
     text-align: center;
+  }
+  .section-body, .service-title {
+    font-size: 2.25rem;
   }
   .service-content {
     gap : 4px;
   }
   .service-img{
-    width: 100%;
+    width: 80%;
   }
   .service-text {
-    font-size: 0.8rem;
+    font-size: 1.25rem;
+  }
+  .HF {
+    font-size: 1.5rem;
+    font-weight: 80;
   }
   #footer {
-    font-size: 0.5rem;
-    font-weight: 80;
+    font-size: 1rem;
   }
 }
