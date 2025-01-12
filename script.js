@@ -1,6 +1,19 @@
 import * as THREE from "three";
 import { generateStars } from "./starsss.js";
 
+function isMobileOrTablet() {
+  const userAgent = navigator.userAgent.toLowerCase();
+  return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/.test(userAgent);
+}
+
+let isPortrait = false;
+if (isMobileOrTablet()) {
+  console.log("Device is mobile or tablet");
+  isPortrait = true
+} else {
+  console.log("Device is desktop or laptop");
+}
+
 let width = window.innerWidth;
 let height = window.innerHeight;
 
@@ -23,13 +36,10 @@ function initSatelliteCursor(size = 32) {
   });
 }
 
-let isPortrait = false;
 let cameraZ = 2;
-console.log(width, height, isPortrait,width-200);
-if (width < height) { // Portrait mode
-  isPortrait = true;
+if (isPortrait) {     // Portrait mode
   cameraZ = 3.5;
-} else { // Landscape Mode
+} else {              // Landscape Mode
   initSatelliteCursor(150);
 }
 
@@ -91,11 +101,11 @@ if (isPortrait) {
   menu_M.style.display = "block";
 
   menu_M.addEventListener("click", () => {
-    console.log("side menu OPEN clicked");
+    console.log("side menu OPENED");
     menu_Tray.style.right = "0px";
   });
   menu_TrayClose.addEventListener("click", () => {
-    console.log("side menu CLOSE clicked");
+    console.log("side menu CLOSED");
     menu_Tray.style.right = "-200px";
   });
 }
