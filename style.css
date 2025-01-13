@@ -118,7 +118,7 @@ html{
 .btnA{
   color: white;
   background-color: black;
-  border-radius: 10px;
+  border-radius: 4px;
   padding: 4px;
   font-size: 2rem;
 }
@@ -143,8 +143,8 @@ html{
   width: 32px;
   height: 32px;
   display: none;
-  background-color: rgba(255, 255, 255, 0.75);
-  border: none;
+  background:none;
+  border : none;
   border-radius: 0.5rem;
 }
 #close-menu{
