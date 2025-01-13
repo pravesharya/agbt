@@ -223,7 +223,7 @@ html{
   }
   .section-content{
     gap: 2rem;
-    max-height:calc(95% - 100px);
+    max-height:calc(100% - 120px);
   }
   .section-title {
     font-size: 4rem;
